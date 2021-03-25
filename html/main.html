@@ -12,6 +12,92 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-2 bg-light">
+        <div class="d-grid gap-2 d-md-block">
+          <img id="navigation_logo" class="img-fluid" src="../assets/app-icon.png" />
+          <img id="navigation_home" class="img-fluid" src="../assets/home.svg" />
+          <img id="navigation_settings" class="img-fluid" src="../assets/settings.svg" />
+          <img id="navigation_info" class="img-fluid" src="../assets/info.svg" />
+        </div>
+      </div>
+      <div class="col-10">
+        <h1>Workspace</h1>
+        <div class="xrp_secret_container">
+          <label for="xrp_secret" class="form-label">XRP Secret Key / Private Key:</label>
+          <input id="xrp_secret" type="password" />
+
+          <!-- Displays / hides the xrp secret control by changing the input type -->
+          <img id="view_xrp_secret" src="../assets/Icon-show.svg" title="Show Secret" />
+          <img id="hide_xrp_secret" src="../assets/Icon-Hide.svg" title="Hide Secret" />
+          <!-- Rendered if XRP secret is invalid -->
+          <div id="xrp_secret_invalid" class="invalid-feedback">
+            Invalid XRP Secret / Key
+          </div>
+        </div>
+
+        <!-- XRP Address Control -->
+        <div class="xrp_address_subsection">
+          <div id="xrp_address_container">
+            <div id="xrp_address_info">
+              You have opted-in to specify the XRP account to setup via the settings.
+            </div>
+          </div>
+
+          <!-- This input is validated to ensure it is an XRP address -->
+          <label for="xrp_address" class="form-label">XRP Account:</label>
+          <input id="xrp_address" type="text" />
+
+          <!-- Rendered if XRP address is invalid -->
+          <div id="xrp_address_invalid" class="invalid-feedback">
+            Invalid XRP Address
+          </div>
+        </div>
+
+        <!-- ETH Address Control -->
+        <div id="eth_address_subsection">
+          <div id="eth_address_container">
+            <h3>FLR Address:</h3>
+
+            <!-- Click this button to launch generate_eth window -->
+            <button button type="button" class="btn btn-primary" id="create_eth_address">
+              <img src="../assets/Icon-plus.svg" />
+              New
+            </button>
+          </div>
+
+          <!-- This input is validated to ensure it is an ETH address -->
+          <input id="eth_address" type="text" />
+
+          <!-- Rendered if ETH address is invalid -->
+          <div id="eth_address_invalid" class="error">
+            Invalid FLR Address
+          </div>
+        </div>
+
+        <div id="main_controls">
+          <!-- Clear all input fields -->
+          <button id="main_clear_all">Clear All</button>
+
+          <!-- Submit form, setting up transaction and submitting (if online) -->
+          <button id="main_submit" disabled>Submit</button>
+        </div>
+
+        <!-- render loading indicator on submit -->
+        <div id="loading_container">
+          <div id="loading"></div>
+        </div>
+
+        <div class="alert alert-warning" role="alert" id="main_security">
+          <img src="../assets/Icon-security-bk.svg" />
+          <div>Just a friendly reminder. This application requires access to your XRP Secret Key, please ensure you are running it in a secure environment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div id="main">
     <!-- Main navigation -->
     <div id="navigation">
